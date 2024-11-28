@@ -1,0 +1,65 @@
+@import url("https://fonts.googleapis.com/css2?family=Varela+Round&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  .text-shadow {
+    text-shadow: -6px 6px 10px rgba(0, 0, 0, 0.4);
+  }
+}
+
+@layer utilities {
+  .img-shadow {
+    filter: drop-shadow(-6px 8px 15px rgba(0, 0, 0, 0.4));
+  }
+}
+
+
+body{
+  overflow: scroll;
+  height:100%
+}
+body::-webkit-scrollbar{
+  display: none;
+  
+}
+/* Loading container */
+.loading-container{
+  display: flex;
+  gap:4;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #111;
+  color: #fff;
+  text-align: center;
+  font-family: 'Orbitron', sans-serif;
+}
+
+/* Percentage loader text */
+.percentage-loader {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #3498db;
+  margin-top: 20px;
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+/* Fade-in animation for text */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Dark mode background */
+.dark .loading-container {
+  background-color: #222;
+}
