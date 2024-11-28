@@ -4,7 +4,7 @@ import ScrollTrigger from 'gsap/ScrollTrigger';
 import { useEffect } from 'react';
 const skills = {
   "Programming Languages": ["JavaScript", "TypeScript", "Python",],
-  "Frontend": ["React", "Next.js", "Shadcn", "Tailwind CSS"],
+  "Frontend": ["Html","React", "Next.js", "Shadcn", "Tailwind CSS",],
   "Backend": ["Node.js", "Express", "NestJS", ],
   "Database": ["MongoDB", "PostgreSQL"],
   
@@ -80,7 +80,7 @@ const About = () => {
         toggleActions: "reset none none none"
       },
       x:50,
-      backgroundColor:"blue",
+      backgroundColor:"#4169E1",
       duration:1,
       stagger:0.5,
       ease:'power3.in'
@@ -137,8 +137,8 @@ const About = () => {
                     </h4>
                     <div className="flex flex-wrap gap-2">
                       {items.map((skill, index) => (
-                       <div key={index} class="relative px-3 py-1 text-sm rounded-full bg-[#4169E1] dark:bg-gray-700  font-serif text-white overflow-hidden group">
-                       <span class="absolute inset-0 bg-black dark:bg-gray-500 transition-all duration-500 scale-x-0 group-hover:scale-x-100 origin-left"></span>
+                       <div key={index} class="relative px-3 py-1 text-sm rounded-full bg-[#4169E1] dark:text-black dark:bg-[#5A8DFD]  font-serif text-white overflow-hidden group">
+                       <span class="absolute inset-0 bg-black dark:bg-white transition-all duration-500 scale-x-0 group-hover:scale-x-100 origin-left"></span>
                        <span class="relative">{skill}</span>
                      </div>
                      

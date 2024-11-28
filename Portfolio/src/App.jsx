@@ -1,14 +1,37 @@
 import React from 'react'
+import {useRoutes} from 'react-router-dom'
 import gsap from "gsap";
 import "./index.css";
 import { useState,useEffect } from "react";
-import { Suspense,lazy } from 'react';
-import Navbar from './components/Navbar';
-import Hero from './components/Hero';
-import About from './components/About';
-import Projects from './components/Projects';
-import Contact from './components/Contact';
-import Footer from './components/Footer';
+import Home from './pages/Home';
+import { About } from './pages/About';
+import Projects from './pages/Projects';
+import { Contact } from './pages/Contact';
+function CustomRoutes() { 
+  const routes = useRoutes([
+    {
+      path: "/",
+      element:<Home/>,
+    },
+   {
+    path:"/about",
+    element:<About/>,
+    },
+    {
+      path:"/projects",
+      element:<Projects/>,
+      },
+      {
+        path:"/contact",
+        element:<Contact/>,
+        },
+   {
+    path:"*",
+    element:<div className='flex justify-center items-center'>Page Not Found</div>
+   }
+  ]);
+  return routes;
+}
 
 export default function App() {
   const [loading, setLoading] = useState(true);
@@ -113,7 +136,7 @@ export default function App() {
 
       )
       .to(".text",
-        {y:-20,x:20,opacity:1,duration:0.7,color:"white",stagger:0.3}
+        {y:-20,x:10,opacity:1,duration:0.7,color:"white",stagger:0.3}
 
       )
   
@@ -130,7 +153,7 @@ export default function App() {
                 <div className='three bg-[#1f1f1f] w-full p-40'></div>
                 <div className='four bg-[#1f1f1f] w-full p-40'></div>
               </div>
-              <p className='text font-serif text-4xl animate-pulse '>Get more clients and value with my expertise</p>
+              <p className='text font-serif md:text-4xl animate-pulse text-sm '>Get more clients and value with my expertise</p>
               <svg
                 width="115"
                 height="15"
@@ -185,14 +208,11 @@ export default function App() {
         
           {!loading && (
             <>
-              <Navbar />
-              <Hero />
-              <About />
-              <Projects />
-              <Contact />
-              <Footer />
+             <CustomRoutes/>
             </>
           )}
+         
+       
        
       </main>
     </>

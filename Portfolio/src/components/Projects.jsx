@@ -2,31 +2,54 @@ import React,{useEffect} from 'react';
 import { ExternalLink, Github } from 'lucide-react';
 import gsap from 'gsap';
 import ScrollTrigger from 'gsap/ScrollTrigger';
+import { motion } from "framer-motion";
 gsap.registerPlugin(ScrollTrigger)
+export const fadeUp = (delay) => {
+  return {
+    hidden: {
+      opacity: 0,
+      y: 200,
+      overflow:"hidden"
+    },
+    show: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: 0.5,
+        delay: delay,
+      },
+    },
+  };
+};
+
 const projects = [
   {
-    title: "E-Learning Platform",
-    description: "A comprehensive learning management system built with Next.js and MongoDB",
-    image: "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=800&q=80",
-    tech: ["React", "Node.js", "MongoDB", "AWS"],
-    liveLink: "https://example.com",
-    githubLink: "https://github.com"
+    title: "E-Commerce Platform",
+    description: "A full-stack e-commerce platform built with React, Node.js, and MongoDB.",
+    image: "https://plus.unsplash.com/premium_photo-1683746792239-6ce8cdd3ac78?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8ZSUyMGNvbW1lcmNlfGVufDB8fDB8fHww",
+    tech: ["React", "Node.js", "MongoDB", "Express","Redux toolkit"],
+    liveLink: "https://mboashopsite.onrender.com/",
+    githubLink: "https://github.com/651118070/shop1",
+    delay: 0.5,
   },
   {
-    title: "AI-Powered Analytics Dashboard",
-    description: "Real-time data visualization platform with machine learning insights",
-    image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=800&q=80",
-    tech: ["Python", "TensorFlow", "React", "PostgreSQL"],
-    liveLink: "https://example.com",
-    githubLink: "https://github.com"
+    title: "AI-Powered Summariser Article",
+    description: "Summarise articles with openAI",
+    image: "https://images.unsplash.com/photo-1620680779930-e74c15c8f7a0?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8c3VtbWFyaXNlJTIwYWklMjBhcnRpY2xlfGVufDB8fDB8fHww",
+    tech: ["React", "OpenAI"],
+    liveLink: "https://summariseepola.netlify.app/",
+    githubLink: "https://github.com/651118070/summarize",
+     delay: 0.7,
   },
   {
-    title: "Social Media Manager",
-    description: "Automated social media management tool with scheduling capabilities",
-    image: "https://images.unsplash.com/photo-1432888498266-38ffec3eaf0a?auto=format&fit=crop&w=800&q=80",
-    tech: ["Vue.js", "Express", "Redis", "Docker"],
-    liveLink: "https://example.com",
-    githubLink: "https://github.com"
+    title: "E-learning Platform",
+    description: "A platform to help gce students ace in their exams.",
+    image: "https://media.istockphoto.com/id/1919863292/photo/e-learning-education-internet-lessons-and-online-learning-with-webinars-video-tutorials.webp?a=1&b=1&s=612x612&w=0&k=20&c=t8D-3uQw-Dkvq5DluqPW1P7vbXyy2mN7XpKE_zcDWiw=",
+    tech: ["Nest js", "Next js", "Uploadthing", "Docker","MongoDB"],
+    liveLink: "https://mentor-guru.vercel.app/",
+    githubLink: "https://github.com/jpteks/Mentor-Guru",
+    delay: 0.9,
+
   }
 ];
 
@@ -41,7 +64,7 @@ const Projects = () => {
      {
       scrollTrigger:{
         trigger:'.projects',
-        start:'top 70%',
+        start:'top 45%',
         scrub:true,
       
       },
@@ -60,7 +83,10 @@ const Projects = () => {
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
         {projects.map((project, index) => (
         <div className=''>
-          <div 
+          <motion.div 
+          variants={fadeUp(project.delay)}
+          initial="hidden"
+          whileInView={"show"}
             key={index} 
             className="projects group rounded-xl overflow-hidden shadow-lg dark:bg-gray-800 transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl "
            
@@ -107,7 +133,7 @@ const Projects = () => {
                 </a>
               </div>
             </div>
-          </div>
+          </motion.div>
         </div>
         ))}
       </div>

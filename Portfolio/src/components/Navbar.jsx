@@ -5,6 +5,7 @@ import { useTheme } from "../context/ThemeProvider";
 import { MdClose } from "react-icons/md";
 import { useState } from "react";
 import { ModeToggle } from "./ModeToggle";
+import { useNavigate } from 'react-router-dom';
 import Logos from "./Logos";
 import gsap from 'gsap';
 import { useEffect } from "react";
@@ -12,19 +13,19 @@ const NavbarMenu = [
   {
     id: 1,
     title: "Home",
-    link: "#",
+    link: "/",
     classname:"home"
   },
   {
     id: 2,
     title: "About Me",
-    link: "#about",
+    link: "/about",
     classname:"about"
   },
   {
     id: 3,
     title: "Projects",
-    link: "#projects",
+    link: "/projects",
     classname:"projects"
   },
   
@@ -33,13 +34,23 @@ const NavbarMenu = [
 ];
 export default function Navbar() {
 
-
+  const navigate=useNavigate()
   const [open,setOpen]=useState(false)
   const { theme} = useTheme();
   const toggleMenu = () => {
     setOpen(!open);
   };
 useEffect(()=>{
+  gsap.to(
+    ".contact",
+    {
+      duration:0.5,
+      borderColor:"#4169E1",
+      repeat:-1,
+      yoyo:true,
+      ease:"power2.inOut"
+    }
+  )
   gsap.to(
     ".contact",
     {
@@ -69,9 +80,11 @@ useEffect(()=>{
               <li key={id}  >
                
                
-                  <a
-                    href={item.link}
-                    className="inline-block text-sm py-2 px-3 uppercase cursor-pointer"
+               <a onClick={() => navigate(item.link)}
+
+            className={`${item.classname || ''} inline-block text-sm py-2 px-3 uppercase cursor-pointer`}
+
+                   
                   >
                     {item.title}
                   </a>
@@ -80,7 +93,7 @@ useEffect(()=>{
               </li>
             ))}
             <li>
-              <Button  className="contact text-black border-transparent border-2  dark:bg-white dark:text-black"><a href="#contact"> Contact Me</a></Button>
+              <Button  className="contact text-black border-transparent border-2  dark:bg-white dark:text-black"><a onClick={() => navigate("/contact")}> Contact Me</a></Button>
             </li>
 
        
@@ -116,7 +129,7 @@ useEffect(()=>{
               </li>
             ))}
               <li>
-              <Button className="contact dark:text-white dark:bg-black"><a href="#contact"> Contact Me</a></Button>
+              <Button className="contact dark:text-white dark:bg-black"><a onClick={() => navigate("/contact")}> Contact Me</a></Button>
             </li>
            
               

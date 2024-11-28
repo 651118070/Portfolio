@@ -1,9 +1,12 @@
-import React, { useState, useEffect } from "react";
-import { Mail, Send } from "lucide-react";
+import React, { useEffect,useState} from 'react';
 import gsap from "gsap";
+import { Mail, MapPin, Phone,Send } from 'lucide-react';
+import Navbar from '@/components/Navbar';
+import Footer from '@/components/Footer';
 import ScrollTrigger from "gsap/ScrollTrigger";
 gsap.registerPlugin(ScrollTrigger);
-const Contact = () => {
+export const Contact = () => {
+ 
   useEffect(() => {
     const tl = gsap.timeline();
 
@@ -42,6 +45,7 @@ const Contact = () => {
       }
     );
   }, []);
+
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -56,7 +60,9 @@ const Contact = () => {
   };
 
   return (
-    <section  className="py-20 dark:text-white">
+    <main className="dark:bg-black bg-white grid min-h-screen max-w-md md:max-w-full">
+      <Navbar />
+      <section  className="py-20 dark:text-white">
       <div className="max-w-4xl mx-auto">
         <h2 className="text-3xl font-bold font-orbitron bg-clip-text text-transparent bg-gradient-to-r from-[#4169E1] to-blue-300  mb-12 text-center dark:text-white">
           Get in Touch
@@ -154,7 +160,7 @@ const Contact = () => {
         </div>
       </div>
     </section>
+      <Footer />
+    </main>
   );
 };
-
-export default Contact;

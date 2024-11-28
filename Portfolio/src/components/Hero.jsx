@@ -99,7 +99,7 @@ const Hero = () => {
       <img
         src={me}
         alt="Profile"
-        className="w-64 pic h-64 rounded-full mb-8 shadow-lg hover:animate-pulse transition-transform duration-300"
+        className=" hover:backdrop-opacity-70 w-64 pic h-64 rounded-full mb-8 shadow-lg transition-transform duration-300"
       />
       <h1 id='animated-heading' className="text-md md:text-4xl font-bold mb-4">POLA WAFFO PHARES VALENTIN</h1>
       <h2 className="p text-xl mb-6 text-[#4169E1] dark:text-blue-400 " >
@@ -109,24 +109,24 @@ const Hero = () => {
        Rapidly delivering smart, modern web solutions to simplify your challenges and drive your success.
       </p>
       <div className=" flex gap-4 mb-8 animate-slide-up" style={{ animationDelay: '300ms' }}>
-        <a href="https://github.com" target="_blank" rel="noopener noreferrer"
-           className="hover:-translate-y-4  p-2 rounded-full bg-gray-100 hover:bg-gray-200 dark:bg-gray-800 dark:hover:bg-gray-700 transition-all duration-300 delay-100 ease-linear hover:scale-110">
+        <a href="https://github.com/651118070/" target="_blank" rel="noopener noreferrer"
+           className="hover:-translate-y-2 dark:hover:-translate-y-2  p-2 dark:text-white rounded-full bg-[#4169E1]  dark:bg-[#5A8DFD]  transition-all duration-300 delay-100 ease-linear hover:scale-110">
           <Github className="w-6 h-6 " />
         </a>
-        <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer"
-           className="p-2 rounded-full bg-gray-100 hover:bg-gray-200 dark:bg-gray-800 dark:hover:bg-gray-700 transition-all duration-300 delay-100 ease-linear hover:-translate-y-4 hover:scale-110">
+        <a href="https://www.linkedin.com/in/pola-waffo-phares-valentin-571a37230/" target="_blank" rel="noopener noreferrer"
+           className="dark:hover:-translate-y-2 p-2 rounded-full bg-[#4169E1] dark:text-white dark:bg-[#5A8DFD] transition-all duration-300 delay-100 ease-linear hover:-translate-y-2 hover:scale-110">
           <Linkedin className="w-6 h-6" />
         </a>
-        <a href="mailto:contact@example.com"
-           className="0 delay-100 ease-linear hover:-translate-y-4 p-2 rounded-full bg-gray-100 hover:bg-gray-200 dark:bg-gray-800 dark:hover:bg-gray-700 transition-all duration-300 hover:scale-110">
+        <a href="mailto:valentinpola7@gmail.com"
+           className="dark:hover:-translate-y-2 delay-100 ease-linear hover:-translate-y-2 p-2 rounded-full bg-[#4169E1] dark:text-white dark:bg-[#5A8DFD] transition-all duration-300 hover:scale-110">
           <Mail className="w-6 h-6" />
         </a>
       </div>
-      <div class="relative text-lg px-3 py-1  rounded-full bg-[#4169E1] dark:bg-gray-700  font-serif text-white overflow-hidden group">
-                       <span class="absolute inset-0 bg-black dark:bg-gray-500 transition-all duration-500 scale-x-0 group-hover:scale-x-100 origin-left"></span>
+      <div class="relative text-lg px-3 py-1  rounded-full bg-[#4169E1] dark:bg-[#5A8DFD] font-serif text-white overflow-hidden group">
+                       <span class="absolute inset-0 bg-black dark:bg-white transition-all duration-500 scale-x-0 group-hover:scale-x-100 origin-left"></span>
                        <button 
         onClick={handleDownloadResume}
-        className=" outline-none relative  text-white px-6 py-3 rounded-lg flex items-center gap-2  shadow-lg hover:shadow-xl"
+        className=" outline-none relative dark:text-[#181818]  text-white px-6 py-3 rounded-lg flex items-center gap-2  shadow-lg hover:shadow-xl"
        
       >
         <Download className="w-5 h-5" />
