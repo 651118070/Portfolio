@@ -52,11 +52,11 @@ const Projects = () => {
     <div ref={sectionRef} className="dark:bg-black bg-white dark:text-white grid min-h-screen">
       <Navbar/>
       <div className="max-w-7xl mx-auto">
-        <h2 className="text-4xl font-bold font-orbitron mt-20 dark:text-white text-gray-900 text-center mb-16">
+        <h2 className="text-3xl font-bold font-orbitron bg-clip-text text-transparent bg-gradient-to-r from-[#4169E1] to-blue-300  mt-[80px] text-center dark:text-white">
           Featured Projects
         </h2>
         
-        <div className="grid grid-cols-1  lg:grid-cols-2 gap-8 ">
+        <div className="grid grid-cols-1  lg:grid-cols-2 gap-8 mt-10 ">
           {projectsData.map((project, index) => (
             <div
             

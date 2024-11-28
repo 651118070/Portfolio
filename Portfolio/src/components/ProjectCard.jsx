@@ -54,7 +54,7 @@ const ProjectCard= ({
               href={githubUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center gap-2 text-white hover:text-gray-900 transition-colors"
+              className="flex items-center gap-2 text-gray-600 dark:text-white hover:text-gray-900 transition-colors"
             >
               <Github size={16} />
               View Code
