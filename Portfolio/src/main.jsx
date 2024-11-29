@@ -4,6 +4,20 @@ import App from "./App.jsx";
 import "./index.css";
 import { ThemeProvider } from "./context/ThemeProvider.jsx";
 import { BrowserRouter } from "react-router-dom";
+import posthog from 'posthog-js';
+
+// Initialize PostHog with Vite environment variables
+const posthogKey = import.meta.env.VITE_PUBLIC_POSTHOG_KEY;
+
+if (posthogKey) {
+  posthog.init(posthogKey, {
+    api_host: import.meta.env.VITE_PUBLIC_POSTHOG_HOST || 'https://app.posthog.com',
+  });
+  console.log('PostHog API Key:', posthogKey);
+} else {
+  console.error('PostHog API Key is missing or not correctly defined in the .env file');
+}
+
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
     {/* <MouseFollower /> */}
