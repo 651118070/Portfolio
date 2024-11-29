@@ -99,7 +99,7 @@ const Hero = () => {
       <img
         src={me}
         alt="Profile"
-        className=" hover:backdrop-opacity-70 w-64 pic h-64 rounded-full mb-8 shadow-lg transition-transform duration-300"
+        className=" hover:backdrop-opacity-70 w-64 pic h-64 rounded-full mt-10 mb-8 shadow-lg transition-transform duration-300"
       />
       <h1 id='animated-heading' className="text-md md:text-4xl font-bold mb-4">POLA WAFFO PHARES VALENTIN</h1>
       <h2 className="p text-xl mb-6 text-[#4169E1] dark:text-blue-400 " >
