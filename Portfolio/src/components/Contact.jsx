@@ -4,44 +4,7 @@ import gsap from "gsap";
 import ScrollTrigger from "gsap/ScrollTrigger";
 gsap.registerPlugin(ScrollTrigger);
 const Contact = () => {
-  useEffect(() => {
-    const tl = gsap.timeline();
-
-    tl.to(
-      ".contactme",
-
-      {
-        scrollTrigger: {
-          trigger: ".contactme",
-          start: "top center",
-         
-         
-        },
-        x: -50,
-        scrub:true,
-        duration: 1,
-        stagger: 0.5,
-        ease: "power3.in",
-      }
-    );
-    tl.to(
-      ".form",
-
-      {
-        scrollTrigger: {
-          trigger: ".form",
-          start: "top center",
-          
-         
-        },
-        x: 100,
-        scrub:true,
-        duration: 1,
-        stagger: 0.5,
-        ease: "power3.in",
-      }
-    );
-  }, []);
+ 
   const [formData, setFormData] = useState({
     name: "",
     email: "",
