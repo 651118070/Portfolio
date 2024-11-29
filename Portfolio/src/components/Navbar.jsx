@@ -10,6 +10,7 @@ import Logos from "./Logos";
 import gsap from 'gsap';
 import { useEffect } from "react";
 const NavbarMenu = [
+  
   {
     id: 1,
     title: "Home",
