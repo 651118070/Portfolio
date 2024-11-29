@@ -4,7 +4,7 @@ import App from "./App.jsx";
 import "./index.css";
 import { ThemeProvider } from "./context/ThemeProvider.jsx";
 import { BrowserRouter } from "react-router-dom";
-import posthog from 'posthog-js';
+import posthog from 'posthog-js'
 
 // Initialize PostHog with Vite environment variables
 const posthogKey = import.meta.env.VITE_PUBLIC_POSTHOG_KEY;
