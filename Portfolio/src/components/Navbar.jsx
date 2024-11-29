@@ -82,7 +82,7 @@ useEffect(()=>{
                
                <a onClick={() => navigate(item.link)}
 
-            className={`${item.classname || ''} inline-block text-sm py-2 px-3 hover:text-[#4169E1] uppercase cursor-pointer`}
+            className={`${item.classname || ''} inline-block text-sm py-2 px-3 duration-300 hover:text-[#4169E1] transition-colors uppercase cursor-pointer`}
 
                    
                   >
@@ -121,7 +121,7 @@ useEffect(()=>{
                
                   <a
                     href={item.link}
-                    className="inline-block text-base  py-2 px-3 uppercase text-[#4169E1]"
+                    className="inline-block text-base  py-2 px-3 uppercase duration-300 hover:text-[#4169E1] transition-colors"
                   >
                     {item.title}
                   </a>
