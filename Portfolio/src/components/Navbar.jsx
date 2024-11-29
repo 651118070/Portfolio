@@ -10,7 +10,7 @@ import Logos from "./Logos";
 import gsap from 'gsap';
 import { useEffect } from "react";
 const NavbarMenu = [
-  
+
   {
     id: 1,
     title: "Home",
@@ -121,7 +121,7 @@ useEffect(()=>{
               <li key={key} >
                
                   <a
-                    href={item.link}
+                    onClick={() => navigate(item.link)}
                     className="inline-block text-base  py-2 px-3 uppercase duration-300 hover:text-[#4169E1] transition-colors"
                   >
                     {item.title}
