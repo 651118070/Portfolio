@@ -1,5 +1,6 @@
 import React from 'react';
-import { Github, Linkedin, Mail, Code } from 'lucide-react';
+import { Github, Linkedin, Mail, Code,PhoneIcon} from 'lucide-react';
+import { MdWhatsapp } from 'react-icons/md';
 import { useNavigate } from 'react-router-dom';
 import Logos from './Logos';
 import { useTheme } from "../context/ThemeProvider";
@@ -69,7 +70,7 @@ const Footer = () => {
                 href="https://wa.me/651118070?text=Hello Pola, i wish to book a service."
                 className="p-2 rounded-full bg-gray-100 hover:bg-gray-200 dark:bg-gray-700 dark:hover:bg-gray-600  transition-all duration-300 delay-100 ease-linear hover:-translate-y-4 hover:scale-110"
               >
-                <Mail className="w-5 h-5" />
+               <MdWhatsapp className="w-5 h-5" />
               </a>
             </div>
           </div>
