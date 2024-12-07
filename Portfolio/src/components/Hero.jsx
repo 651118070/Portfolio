@@ -83,7 +83,7 @@ const Hero = () => {
 
  
   const handleDownloadResume = () => {
-    const pdfUrl = '/Tutor Job application.pdf'; // Replace with the correct path to your PDF file
+    const pdfUrl = '/pola-cv.pdf'; // Replace with the correct path to your PDF file
     const link = document.createElement('a');
     
     link.href = pdfUrl;
