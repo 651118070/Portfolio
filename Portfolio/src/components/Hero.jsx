@@ -2,6 +2,7 @@ import React, {useEffect} from 'react';
 import { Github, Linkedin, Mail, Download } from 'lucide-react';
 import me from '../assets/me.jpg'
 import gsap from 'gsap';
+import {motion} from 'framer-motion';
 import ScrollTrigger from 'gsap/ScrollTrigger';
 gsap.registerPlugin(ScrollTrigger)
 const Hero = () => {
@@ -96,12 +97,45 @@ const Hero = () => {
 
   return (
     <section className="py-14 flex flex-col items-center text-center font-orbitron tracking-widest">
-      <img
-        src={me}
-        alt="Profile"
-        className=" hover:backdrop-opacity-70 w-64 pic h-64 rounded-full mt-10 mb-8 shadow-lg transition-transform duration-300"
-      />
-      <h1 id='animated-heading' className="text-md md:text-4xl font-bold mb-4">POLA WAFFO PHARES VALENTIN</h1>
+   <div className="relative w-64 h-64 flex">
+  {/* Animated SVG Circle */}
+  <motion.svg
+    className="absolute inset-0 w-[300px] h-[300px] mt-5"
+    fill="transparent"
+    viewBox="0 0 506 506"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <motion.circle
+      cx="253"
+      cy="253"
+      r="250"
+      stroke="#4169E1"
+      strokeWidth="4"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      initial={{ strokeDasharray: "24 10 0 0" }}
+      animate={{
+        strokeDasharray: ["15 120 25 25", "16 25 92 72", "4 250 22 22"],
+        rotate: [120, 360],
+      }}
+      transition={{
+        duration: 20,
+        repeat: Infinity,
+        repeatType: "reverse",
+      }}
+    />
+  </motion.svg>
+
+  {/* Profile Image */}
+  <img
+    src={me}
+    alt="Profile"
+    className="absolute mt-10 ml-6 w-full h-full rounded-full shadow-lg object-cover"
+  />
+</div>
+
+     
+      <h1 id='animated-heading' className="text-md md:text-4xl font-bold mt-20 ">POLA WAFFO PHARES VALENTIN</h1>
       <h2 className="p text-xl mb-6 text-[#4169E1] dark:text-blue-400 " >
         Full Stack Developer
       </h2>
