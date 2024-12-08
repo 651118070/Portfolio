@@ -5,7 +5,7 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import me from "../assets/pic.jpeg";
 import { TypeAnimation } from "react-type-animation";
-
+import {motion} from  'framer-motion'
 export const About = () => {
   useEffect(() => {
     gsap.to(".animate-section", {
@@ -67,11 +67,47 @@ export const About = () => {
           {/* Profile Section */}
           <div className="lg:col-span-1 animate-section">
             <div className="sticky top-24">
-              <img
+            <div className="relative w-64 h-64 flex">
+  {/* Animated SVG Circle */}
+  <motion.svg
+    className="absolute inset-0 w-[300px] h-[300px] mt-5"
+    fill="transparent"
+    viewBox="0 0 506 506"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <motion.circle
+      cx="253"
+      cy="253"
+      r="250"
+      stroke="#4169E1"
+      strokeWidth="4"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      initial={{ strokeDasharray: "24 10 0 0" }}
+      animate={{
+        strokeDasharray: ["15 120 25 25", "16 25 92 72", "4 250 22 22"],
+        rotate: [160, 360],
+      }}
+      transition={{
+        duration: 20,
+        repeat: Infinity,
+        repeatType: "reverse",
+      }}
+    />
+  </motion.svg>
+
+  {/* Profile Image */}
+  <img
+    src={me}
+    alt="Profile"
+    className="absolute mt-10 ml-6 w-full h-full rounded-full shadow-lg object-cover hover:opacity-100 opacity-90 dark:opacity-50 dark:hover:opacity-100 mb-8  transition-transform duration-300"
+  />
+</div>
+              {/* <img
                 src={me}
                 alt="Profile"
                 className="hover:opacity-100 opacity-90 dark:opacity-50 dark:hover:opacity-100 w-full h-96 rounded-full mb-8 shadow-lg transition-transform duration-300"
-              />
+              /> */}
               <h1 className="text-3xl font-bold mb-4">
                 POLA WAFFO PHARES VALENTIN
               </h1>

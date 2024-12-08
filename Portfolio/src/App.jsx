@@ -1,35 +1,37 @@
-import React from 'react'
-import {useRoutes} from 'react-router-dom'
+import React from "react";
+import { useRoutes } from "react-router-dom";
 import gsap from "gsap";
 import "./index.css";
-import { useState,useEffect } from "react";
-import Home from './pages/Home';
-import { About } from './pages/About';
-import Projects from './pages/Projects';
-import { Contact } from './pages/Contact';
-import GlobeGL from './components/Globe';
-function CustomRoutes() { 
+import { useState, useEffect } from "react";
+import Home from "./pages/Home";
+import { About } from "./pages/About";
+import Projects from "./pages/Projects";
+import { Contact } from "./pages/Contact";
+
+function CustomRoutes() {
   const routes = useRoutes([
     {
       path: "/",
-      element:<Home/>,
-    },
-   {
-    path:"/about",
-    element:<About/>,
+      element: <Home />,
     },
     {
-      path:"/projects",
-      element:<Projects/>,
-      },
-      {
-        path:"/contact",
-        element:<Contact/>,
-        },
-   {
-    path:"*",
-    element:<div className='flex justify-center items-center'>Page Not Found</div>
-   }
+      path: "/about",
+      element: <About />,
+    },
+    {
+      path: "/projects",
+      element: <Projects />,
+    },
+    {
+      path: "/contact",
+      element: <Contact />,
+    },
+    {
+      path: "*",
+      element: (
+        <div className="flex justify-center items-center">Page Not Found</div>
+      ),
+    },
   ]);
   return routes;
 }
@@ -39,65 +41,70 @@ export default function App() {
   const [progression, setProgression] = useState(0);
 
   useEffect(() => {
-     console.log(loading)
-    
+    console.log(loading);
+
     const tl = gsap.timeline({
       onUpdate: () => {
         // Dynamically update the progress percentage
         const currentProgress = Math.round(tl.progress() * 100);
-        if(loading && currentProgress % 10 ===0){
-         setProgression(currentProgress);
-         console.log(currentProgress);
-       
+        if (loading && currentProgress % 10 === 0) {
+          setProgression(currentProgress);
+          console.log(currentProgress);
         }
-        
       },
       onComplete: () => {
-       setTimeout(()=> {
-        setLoading(false),
-        tl.to(".one", {
-          opacity: 1,
-          scale: 1,
-          x: -1000,
-          duration: 0.7,
-          stagger:0.3,
-          ease: "power3.in",
-        })
-        .to(".two", {
-          opacity: 1,
-          scale: 1,
-          x: 1000,
-          duration: 0.7,
-          stagger:0.3,
-          ease: "power3.in",
-        },"-=1")
-       
-        .to(".three", {
-          opacity: 1,
-          scale: 1,
-          x: -1000,
-          duration: 0.7,
-          stagger:0.3,
-          ease: "power3.in",
-        },"-=1")
-        .to(".four", {
-          opacity: 1,
-          scale: 1,
-          x: 1000,
-          duration: 0.7,
-          stagger:0.3,
-          ease: "power3.in",
-        },"-=1")
-        .to(".loading-container",{display:"none"},
+        setTimeout(() => {
+          setLoading(false),
+            tl
+              .to(".one", {
+                opacity: 1,
+                scale: 1,
+                x: -1000,
+                duration: 0.7,
+                stagger: 0.3,
+                ease: "power3.in",
+              })
+              .to(
+                ".two",
+                {
+                  opacity: 1,
+                  scale: 1,
+                  x: 1000,
+                  duration: 0.7,
+                  stagger: 0.3,
+                  ease: "power3.in",
+                },
+                "-=1"
+              )
 
-        )
-       
-
-       },1000)
+              .to(
+                ".three",
+                {
+                  opacity: 1,
+                  scale: 1,
+                  x: -1000,
+                  duration: 0.7,
+                  stagger: 0.3,
+                  ease: "power3.in",
+                },
+                "-=1"
+              )
+              .to(
+                ".four",
+                {
+                  opacity: 1,
+                  scale: 1,
+                  x: 1000,
+                  duration: 0.7,
+                  stagger: 0.3,
+                  ease: "power3.in",
+                },
+                "-=1"
+              )
+              .to(".loading-container", { display: "none" });
+        }, 1000);
       },
     });
-   
-   
 
     tl.to("#logo", { opacity: 0, scale: 0.5, duration: 0.7 })
       .to("#logo", { opacity: 1, scale: 1, duration: 0.5, ease: "back.in" })
@@ -121,101 +128,81 @@ export default function App() {
         duration: 0.5,
         ease: "power3.in",
       })
-     
-      
-      .fromTo(".text",
-        {y:1000,opacity:0.5,color:"#4169E1"},{
-        
-        y:-20,opacity:1,duration:0.7,color:"white",stagger:0.3
-      },"-=2")
-      .to(".text",
-        {y:-200,x:-300,opacity:1,duration:0.7,color:"#4169E1",stagger:0.3}
 
+      .fromTo(
+        ".text",
+        { y: 1000, opacity: 0.5, color: "#4169E1" },
+        {
+          y: -20,
+          opacity: 1,
+          duration: 0.7,
+          color: "white",
+          stagger: 0.3,
+        },
+        "-=2"
       )
-      .to(".text",
-        {y:-20,x:-300,opacity:1,duration:0.7,color:"#4169E1",stagger:0.3}
-
-      )
-      .to(".text",
-        {y:-20,x:10,opacity:1,duration:0.7,color:"white",stagger:0.3}
-
-      )
-  
+      .to(".text", {
+        y: -200,
+        x: -300,
+        opacity: 1,
+        duration: 0.7,
+        color: "#4169E1",
+        stagger: 0.3,
+      })
+      .to(".text", {
+        y: -20,
+        x: -300,
+        opacity: 1,
+        duration: 0.7,
+        color: "#4169E1",
+        stagger: 0.3,
+      })
+      .to(".text", {
+        y: -20,
+        x: 10,
+        opacity: 1,
+        duration: 0.7,
+        color: "white",
+        stagger: 0.3,
+      });
   }, []);
 
   return (
     <>
       <main className="dark:bg-black">
-        
-            <div className="loading-container absolute z-10 w-screen">
-              <div className='grid grid-cols-2 grid-rows-2 absolute -z-20 w-screen'>
-                <div className='one bg-[#1f1f1f] w-full p-40'></div>
-                <div className='two bg-[#1f1f1f] w-full p-40'></div>
-                <div className='three bg-[#1f1f1f] w-full p-40'></div>
-                <div className='four bg-[#1f1f1f] w-full p-40'></div>
-              </div>
-              <p className='text font-serif md:text-4xl animate-pulse text-sm '>Get more clients and value with my expertise</p>
-              <svg
-                width="115"
-                height="15"
-                viewBox="0 0 115 15"
-                fill="white"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  id="logo"
-                  d="M9.04001 15L0.700012 0.600006H4.04001L10.28 11.42L16.52 0.600006H19.86L11.52 15H9.04001Z"
-                  fill="white"
-                />
-                <path
-                  id="logo"
-                  d="M20.9256 15V3.48001C20.9256 2.94667 21.0523 2.46667 21.3056 2.04001C21.5723 1.60001 21.9189 1.25334 22.3456 1.00001C22.7856 0.733339 23.2723 0.600006 23.8056 0.600006H32.4256C32.9589 0.600006 33.4389 0.733339 33.8656 1.00001C34.3056 1.25334 34.6589 1.60001 34.9256 2.04001C35.1923 2.46667 35.3256 2.94667 35.3256 3.48001V15H32.4056V10.26H23.8056V15H20.9256ZM23.8056 7.38001H32.4056V3.62001C32.4056 3.58001 32.3923 3.55334 32.3656 3.54001C32.3523 3.51334 32.3256 3.50001 32.2856 3.50001H23.9256C23.8856 3.50001 23.8523 3.51334 23.8256 3.54001C23.8123 3.55334 23.8056 3.58001 23.8056 3.62001V7.38001Z"
-                  fill="white"
-                />
-                <path
-                  id="logo"
-                  d="M42.6444 15V3.50001H36.8844V0.600006H51.2844V3.50001H45.5444V15H42.6444Z"
-                  fill="white"
-                />
-                <path
-                  id="logo"
-                  d="M105.75 15V3.50001H99.9899V0.600006H114.39V3.50001H108.65V15H105.75Z"
-                  fill="white"
-                />
-                <path
-                  id="logo"
-                  d="M95.7004 15V0.600006H98.5604V15H95.7004Z"
-                  fill="white"
-                />
-                <path
-                  id="logo"
-                  d="M73.3614 15V14.1L78.6414 7.80001L73.3614 1.50001V0.600006H76.4214L80.5614 5.52001L84.6814 0.600006H87.7214V1.50001L82.4414 7.80001L87.7414 14.08V15H84.6814L80.5214 10.1L76.4214 15H73.3614Z"
-                  fill="white"
-                />
-                <path
-                  id="logo"
-                  d="M68.884 15V0.600006H71.744V15H68.884Z"
-                  fill="white"
-                />
-                <path
-                  id="logo"
-                  d="M64.1002 15L59.8402 9.92H63.6202L67.1402 14.1V15H64.1002ZM52.7802 15V0.619995H64.2802C64.8135 0.619995 65.2935 0.753328 65.7201 1.01999C66.1602 1.27333 66.5135 1.62 66.7802 2.06C67.0468 2.5 67.1802 2.98 67.1802 3.5V7.3C67.1802 7.82 67.0468 8.3 66.7802 8.74C66.5135 9.16666 66.1602 9.51333 65.7201 9.78C65.2935 10.0333 64.8135 10.16 64.2802 10.16L55.6602 10.18V15H52.7802ZM55.7802 7.26H64.1402C64.1802 7.26 64.2068 7.25333 64.2201 7.24C64.2468 7.21333 64.2602 7.18666 64.2602 7.16V3.62C64.2602 3.58 64.2468 3.55333 64.2201 3.54C64.2068 3.51333 64.1802 3.5 64.1402 3.5H55.7802C55.7402 3.5 55.7068 3.51333 55.6802 3.54C55.6668 3.55333 55.6602 3.58 55.6602 3.62V7.16C55.6602 7.18666 55.6668 7.21333 55.6802 7.24C55.7068 7.25333 55.7402 7.26 55.7802 7.26Z"
-                  fill="white"
-                />
-              </svg>
-              <div className="percentage-loader mt-10  ">{progression}%</div>
-            </div>
-          
-        
-          {!loading && (
-            <>
-            
-             <CustomRoutes/>
-            </>
-          )}
-         
-       
-       
+        <div className="loading-container absolute z-10 w-screen">
+          <div className="grid grid-cols-2 grid-rows-2 absolute -z-20 w-screen">
+            <div className="one bg-[#1f1f1f] w-full p-40"></div>
+            <div className="two bg-[#1f1f1f] w-full p-40"></div>
+            <div className="three bg-[#1f1f1f] w-full p-40"></div>
+            <div className="four bg-[#1f1f1f] w-full p-40"></div>
+          </div>
+          <p className="text font-serif md:text-4xl animate-pulse text-sm ">
+            Get more clients and value with my expertise
+          </p>
+          <svg width="227" height="18" viewBox="0 0 227 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path id='logo' d="M209.711 18.0001V0.720093H213.383L223.487 12.7681V0.720093H226.991V18.0001H223.319L213.167 5.90409V18.0001H209.711Z" fill="white"/>
+<path id='logo'  d="M204.098 18.0001V0.720093H207.53V18.0001H204.098Z" fill="white"/>
+<path id='logo'  d="M192.415 18.0001V4.20009H185.503V0.720093H202.783V4.20009H195.895V18.0001H192.415Z" fill="white"/>
+<path id='logo'  d="M166.399 18.0001V0.720093H170.071L180.175 12.7681V0.720093H183.679V18.0001H180.007L169.855 5.90409V18.0001H166.399Z" fill="white"/>
+<path id='logo'  d="M148.072 18.0001V0.720093H164.008V4.20009H151.576V7.60809H161.584V11.1121H151.576V14.5201H164.008V18.0001H148.072Z" fill="white"/>
+<path id='logo'  d="M129.344 18V0.696045H132.8V14.52H146.624V18H129.344Z" fill="white"/>
+<path id='logo'  d="M109.306 18.0001V4.17609C109.306 3.53609 109.458 2.96009 109.762 2.44809C110.082 1.92009 110.498 1.50409 111.01 1.20009C111.538 0.880093 112.122 0.720093 112.762 0.720093H123.106C123.746 0.720093 124.322 0.880093 124.834 1.20009C125.362 1.50409 125.786 1.92009 126.106 2.44809C126.426 2.96009 126.586 3.53609 126.586 4.17609V18.0001H123.082V12.3121H112.762V18.0001H109.306ZM112.762 8.85609H123.082V4.34409C123.082 4.29609 123.066 4.26409 123.034 4.24809C123.018 4.21609 122.986 4.20009 122.938 4.20009H112.906C112.858 4.20009 112.818 4.21609 112.786 4.24809C112.77 4.26409 112.762 4.29609 112.762 4.34409V8.85609Z" fill="white"/>
+<path id='logo'  d="M95.0434 18.0001L85.0354 0.720093H89.0434L96.5314 13.7041L104.019 0.720093H108.027L98.0194 18.0001H95.0434Z" fill="white"/>
+<path id='logo'  d="M57.9546 18.0001V4.17609C57.9546 3.53609 58.1066 2.96009 58.4106 2.44809C58.7306 1.92009 59.1466 1.50409 59.6586 1.20009C60.1866 0.880093 60.7706 0.720093 61.4106 0.720093H71.7546C72.3946 0.720093 72.9706 0.880093 73.4826 1.20009C74.0106 1.50409 74.4346 1.92009 74.7546 2.44809C75.0746 2.96009 75.2346 3.53609 75.2346 4.17609V18.0001H71.7306V12.3121H61.4106V18.0001H57.9546ZM61.4106 8.85609H71.7306V4.34409C71.7306 4.29609 71.7146 4.26409 71.6826 4.24809C71.6666 4.21609 71.6346 4.20009 71.5866 4.20009H61.5546C61.5066 4.20009 61.4666 4.21609 61.4346 4.24809C61.4186 4.26409 61.4106 4.29609 61.4106 4.34409V8.85609Z" fill="white"/>
+<path id='logo'  d="M39.2273 18V0.696045H42.6833V14.52H56.5073V18H39.2273Z" fill="white"/>
+<path id='logo'  d="M22.7363 18.0001C22.0963 18.0001 21.5123 17.8481 20.9843 17.5441C20.4723 17.2241 20.0563 16.8081 19.7363 16.2961C19.4323 15.7681 19.2803 15.1841 19.2803 14.5441V4.17609C19.2803 3.53609 19.4323 2.96009 19.7363 2.44809C20.0563 1.92009 20.4723 1.50409 20.9843 1.20009C21.5123 0.880093 22.0963 0.720093 22.7363 0.720093H33.1043C33.7283 0.720093 34.2963 0.880093 34.8083 1.20009C35.3363 1.50409 35.7603 1.92009 36.0803 2.44809C36.4003 2.96009 36.5603 3.53609 36.5603 4.17609V14.5441C36.5603 15.1841 36.4003 15.7681 36.0803 16.2961C35.7603 16.8081 35.3363 17.2241 34.8083 17.5441C34.2963 17.8481 33.7283 18.0001 33.1043 18.0001H22.7363ZM22.8803 14.5201H32.9123C32.9603 14.5201 32.9923 14.5121 33.0083 14.4961C33.0403 14.4641 33.0563 14.4241 33.0563 14.3761V4.34409C33.0563 4.29609 33.0403 4.26409 33.0083 4.24809C32.9923 4.21609 32.9603 4.20009 32.9123 4.20009H22.8803C22.8323 4.20009 22.7923 4.21609 22.7603 4.24809C22.7443 4.26409 22.7363 4.29609 22.7363 4.34409V14.3761C22.7363 14.4241 22.7443 14.4641 22.7603 14.4961C22.7923 14.5121 22.8323 14.5201 22.8803 14.5201Z" fill="white"/>
+<path id='logo'  d="M0.343994 18V0.744019H14.144C14.784 0.744019 15.36 0.904018 15.872 1.22402C16.4 1.52802 16.824 1.94402 17.144 2.47202C17.464 3.00002 17.624 3.57602 17.624 4.20002V8.76002C17.624 9.38402 17.464 9.96002 17.144 10.488C16.824 11 16.4 11.416 15.872 11.736C15.36 12.04 14.784 12.192 14.144 12.192L3.79999 12.216V18H0.343994ZM3.94399 8.71202H13.976C14.024 8.71202 14.056 8.70402 14.072 8.68802C14.104 8.65602 14.12 8.62402 14.12 8.59202V4.34402C14.12 4.29602 14.104 4.26402 14.072 4.24802C14.056 4.21602 14.024 4.20002 13.976 4.20002H3.94399C3.89599 4.20002 3.85599 4.21602 3.82399 4.24802C3.80799 4.26402 3.79999 4.29602 3.79999 4.34402V8.59202C3.79999 8.62402 3.80799 8.65602 3.82399 8.68802C3.85599 8.70402 3.89599 8.71202 3.94399 8.71202Z" fill="white"/>
+</svg>
+
+          <div className="percentage-loader mt-10  ">{progression}%</div>
+        </div>
+
+        {!loading && (
+          <>
+            <CustomRoutes />
+          </>
+        )}
       </main>
     </>
   );

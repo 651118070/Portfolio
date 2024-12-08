@@ -116,7 +116,7 @@ const Hero = () => {
       initial={{ strokeDasharray: "24 10 0 0" }}
       animate={{
         strokeDasharray: ["15 120 25 25", "16 25 92 72", "4 250 22 22"],
-        rotate: [120, 360],
+        rotate: [160, 360],
       }}
       transition={{
         duration: 20,
@@ -130,7 +130,7 @@ const Hero = () => {
   <img
     src={me}
     alt="Profile"
-    className="absolute mt-10 ml-6 w-full h-full rounded-full shadow-lg object-cover"
+    className="absolute mt-10 ml-6 w-full h-full rounded-full shadow-lg object-cover hover:opacity-100 opacity-90 dark:opacity-50 dark:hover:opacity-100 mb-8  transition-transform duration-300"
   />
 </div>
 
