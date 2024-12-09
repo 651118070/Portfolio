@@ -174,7 +174,7 @@ const Hero = () => {
                        <span class="absolute inset-0 bg-black dark:bg-white transition-all duration-500 scale-x-0 group-hover:scale-x-100 origin-left"></span>
                        <button 
         onClick={handleDownloadResume}
-        className=" outline-none relative dark:text-[#181818]  text-white px-4 py-2 rounded-lg flex items-center gap-2  shadow-lg hover:shadow-xl"
+        className=" outline-none relative dark:text-[#181818]  text-white px-2 py-1 md:px-4 md:py-2 rounded-lg flex items-center gap-2  shadow-lg hover:shadow-xl"
        
       >
         <Download className="w-5 h-5" />
@@ -185,11 +185,11 @@ const Hero = () => {
                        <span class="absolute inset-0 bg-[#4169E1] dark:bg-[#5A8DFD] transition-all duration-500 scale-x-0 group-hover:scale-x-100 origin-left"></span>
                        <button 
        
-        className=" outline-none relative dark:text-[#181818]  text-white px-4 py-2 rounded-lg flex items-center gap-2  shadow-lg hover:shadow-xl"
+        className=" outline-none relative dark:text-[#181818]  text-white px-2 py-1 md:px-4 md:py-2 rounded-lg flex items-center gap-2  shadow-lg hover:shadow-xl"
        
       >
         <Book className="w-5 h-5" />
-        Book a Service
+        <a  href="https://wa.me/651118070?text=Hello Pola, i wish to book a service.">Book a Service</a>
       </button>
                      </div>
      

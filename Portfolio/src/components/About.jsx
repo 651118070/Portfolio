@@ -80,85 +80,85 @@ gsap.registerPlugin(ScrollTrigger)
 
 const About = () => {
 
-  useEffect(()=>{
-    const tl=gsap.timeline()
-    tl.to(
-      '.hobby',
+  // useEffect(()=>{
+  //   const tl=gsap.timeline()
+  //   tl.to(
+  //     '.hobby',
       
       
-     {
-      scrollTrigger:{
-        trigger:'.hobby',
-        start:'top 30%',
-        scrub:true,
+  //    {
+  //     scrollTrigger:{
+  //       trigger:'.hobby',
+  //       start:'top 30%',
+  //       scrub:true,
        
 
-      },
-      x:100,
-      duration:1,
-      stagger:0.3,
-      ease:'power2.inOut'
-     },
+  //     },
+  //     x:100,
+  //     duration:1,
+  //     stagger:0.3,
+  //     ease:'power2.inOut'
+  //    },
      
-    )
-    tl.to(
-      '.service',
+  //   )
+  //   tl.to(
+  //     '.service',
       
       
-     {
-      scrollTrigger:{
-        trigger:'.hobby',
-        start:'top 30%',
-        scrub:true,
+  //    {
+  //     scrollTrigger:{
+  //       trigger:'.hobby',
+  //       start:'top 30%',
+  //       scrub:true,
        
 
-      },
-      x:100,
-      duration:1,
-      stagger:0.3,
-      ease:'power2.inOut'
-     },
+  //     },
+  //     x:100,
+  //     duration:1,
+  //     stagger:0.3,
+  //     ease:'power2.inOut'
+  //    },
      
-    )
-    tl.to(
-      '.aboutme',
+  //   )
+  //   tl.to(
+  //     '.aboutme',
       
-     {
-      scrollTrigger:{
-        trigger:'.aboutme',
-        start:'top center',
-        scrub:true,
+  //    {
+  //     scrollTrigger:{
+  //       trigger:'.aboutme',
+  //       start:'top center',
+  //       scrub:true,
        
-        toggleActions: "reset none none none"
-      },
-      x:50,
-      backgroundColor:"#4169E1",
-      duration:1,
-      stagger:0.5,
-      ease:'power3.in'
-     },
+  //       toggleActions: "reset none none none"
+  //     },
+  //     x:50,
+  //     backgroundColor:"#4169E1",
+  //     duration:1,
+  //     stagger:0.5,
+  //     ease:'power3.in'
+  //    },
      
-    )
-    tl.to(
-      '.color',
+  //   )
+  //   tl.to(
+  //     '.color',
       
-     {
-      scrollTrigger:{
-        trigger:'.color',
-        start:'top center',
-        scrub:true,
+  //    {
+  //     scrollTrigger:{
+  //       trigger:'.color',
+  //       start:'top center',
+  //       scrub:true,
     
-        toggleActions: "play pause reverse reset"
-      },
+  //       toggleActions: "play pause reverse reset"
+  //     },
 
-      color:"white",
-      duration:1,
-      stagger:0.5,
-      ease:'power3.in'
-     },
+  //     color:"white",
+  //     duration:1,
+  //     stagger:0.5,
+  //     ease:'power3.in'
+  //    },
      
-    )
-  },[])
+  //   )
+  // },[])
   return (
     <section  className="py-20">
       <div className="max-w-4xl mx-auto">
