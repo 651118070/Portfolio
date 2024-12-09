@@ -5,7 +5,8 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import me from "../assets/pic.jpeg";
 import { TypeAnimation } from "react-type-animation";
-import {motion} from  'framer-motion'
+import { motion } from "framer-motion";
+
 export const About = () => {
   useEffect(() => {
     gsap.to(".animate-section", {
@@ -17,216 +18,125 @@ export const About = () => {
     });
   }, []);
 
-  const skills = [
+  // Professional Experience
+  const experiences = [
     {
-      icon: Code2,
-      title: "Frontend Development",
+      title: "Mentor Guru - EdTech Platform",
+      duration: "2024 ",
       description:
-        "Creating responsive and interactive user interfaces with React, TypeScript, and modern CSS.",
+        "Built a scalable EdTech platform with NestJS, MongoDB, and React, offering student management, course tracking, and online exams.",
     },
     {
-      icon: Terminal,
-      title: "Backend Development",
+      title: "E-Library Management System - Laravel",
+      duration: "2023",
       description:
-        "Building scalable server-side applications with Node.js, Express, and databases.",
+        "Developed a full-stack web application using Laravel and MySQL, enabling efficient library management, book reservations, and user authentication.",
     },
     {
-      icon: Palette,
-      title: "UI/UX Design",
+      title: "Full Stack Developer - JPTEKS",
+      duration: "2022 - Present",
       description:
-        "Designing intuitive and beautiful user experiences with attention to detail.",
+        "Developed scalable applications, implemented microservices architecture, and managed API integrations using Next JS,Mongo DB,NestJS.",
+    },
+  
+    {
+      title: "Web Tutor - Freelance",
+      duration: "2022 - Present",
+      description:
+        "Provided personalized web development tutorials, helping students master MERN STACK.",
+    },
+   
+    {
+      title: "Student Management System (SMS)",
+      duration: "2022",
+      description:
+        "Developed a university-focused student management system with real-time notifications, course scheduling,AI integration and authentication features.",
+    },
+    {
+      title: "Multiplayer Quiz App",
+      duration: "2021",
+      description:
+        "Created a real-time multiplayer quiz app using the MERN stack, leveraging Socket.IO for live communication.",
     },
   ];
 
-  const hobbies = [
-    {
-      icon:Gamepad2,
-      title: "BasketBall",
-      description:
-        "Ex player at Fire birds, scored 30 points over the year.",
-    },
-    {
-      icon: Camera,
-      title: "Photography",
-      description:
-        "Amateur photographer with a keen interest in landscape and street photography.",
-    },
-    {
-      icon: Book,
-      title: "Reading",
-      description:
-        "Avid reader of science fiction and technical books. Always learning something new.",
-    },
-  ];
+
+ 
 
   return (
-    <div className="dark:bg-black bg-white dark:text-white grid min-h-screen">
+    <div className="dark:bg-black bg-white dark:text-white min-h-screen">
       <Navbar />
+
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-12">
           {/* Profile Section */}
           <div className="lg:col-span-1 animate-section">
             <div className="sticky top-24">
-            <div className="relative w-64 h-64 flex">
-  {/* Animated SVG Circle */}
-  <motion.svg
-    className="absolute inset-0 w-[300px] h-[300px] mt-5"
-    fill="transparent"
-    viewBox="0 0 506 506"
-    xmlns="http://www.w3.org/2000/svg"
-  >
-    <motion.circle
-      cx="253"
-      cy="253"
-      r="250"
-      stroke="#4169E1"
-      strokeWidth="4"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-      initial={{ strokeDasharray: "24 10 0 0" }}
-      animate={{
-        strokeDasharray: ["15 120 25 25", "16 25 92 72", "4 250 22 22"],
-        rotate: [160, 360],
-      }}
-      transition={{
-        duration: 20,
-        repeat: Infinity,
-        repeatType: "reverse",
-      }}
-    />
-  </motion.svg>
-
-  {/* Profile Image */}
-  <img
-    src={me}
-    alt="Profile"
-    className="absolute mt-10 ml-6 w-full h-full rounded-full shadow-lg object-cover hover:opacity-100 opacity-90 dark:opacity-50 dark:hover:opacity-100 mb-8  transition-transform duration-300"
-  />
-</div>
-              {/* <img
+              <motion.img
                 src={me}
                 alt="Profile"
-                className="hover:opacity-100 opacity-90 dark:opacity-50 dark:hover:opacity-100 w-full h-96 rounded-full mb-8 shadow-lg transition-transform duration-300"
-              /> */}
-              <h1 className="text-3xl font-bold mb-4">
+                className="w-64 h-64 rounded-full shadow-lg mx-auto mb-8"
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ duration: 1 }}
+              />
+              <h1 className="text-3xl font-bold mb-4 text-[#4169E1]">
                 POLA WAFFO PHARES VALENTIN
               </h1>
               <TypeAnimation
-                className="text-[#5A8DFD]"
                 sequence={[
-                  "5 years Experience in Web Development",
-                  1000,
                   "Web Developer",
+                  1000,
+                  "Software Engineer",
                   1000,
                   "Web Tutor",
                   1000,
-                  "100% productive",
-                  1000,
-                  "I encourage teamwork",
-                  1000,
-                  "Collaborative Persona",
-                  1000,
-                  "Madrid Fan",
+                  "AI Enthusiast",
                   1000,
                 ]}
                 wrapper="span"
                 speed={50}
-                style={{ fontSize: "2em", display: "inline-block" }}
+                className="text-[#5A8DFD] text-2xl"
                 repeat={Infinity}
               />
               <p className="dark:text-gray-300 mb-6 text-black">
-                Full Stack Developer with a passion for creating beautiful and
-                functional web applications.
+                Passionate Full Stack Developer with a knack for creating innovative web solutions.
               </p>
-              <div className="flex flex-wrap gap-2">
-                {["TypeScript", "React", "Node.js", "Python"].map((tech,index) => (
-                 <div key={index} class="relative px-3 py-1 text-sm rounded-full bg-[#4169E1] dark:text-black dark:bg-[#5A8DFD]  font-serif text-white overflow-hidden group">
-                 <span class="absolute inset-0 bg-black dark:bg-white transition-all duration-500 scale-x-0 group-hover:scale-x-100 origin-left"></span>
-                 <span class="relative">{tech}</span>
-               </div>
-                ))}
-                 
-              </div>
             </div>
           </div>
 
           {/* Main Content */}
-          <div className="lg:col-span-2">
+          <div className="lg:col-span-2 space-y-16">
             {/* Academic Background */}
-            <section className="mt-[100px]">
-              <h2 className="text-xl font-semibold dark:text-white text-[#4169E1] ">
-                Academic Background
-              </h2>
-              <div className="space-y-6 animate-section">
-                <div className="bg-gray-50 text-black dark:bg-gray-900 p-6 rounded-lg">
-                  <h3 className="text-xl font-semibold dark:text-[#5A8DFD] text-[#4169E1]">
-                    Bachelor of Computer Science and Engineering
-                  </h3>
-                  <p className="text-gray-600 mt-2 dark:text-gray-300">
-                    IUC Douala | 2021 - 2025
-                  </p>
+            <section>
+              <h2 className="mt-24 text-xl font-semibold text-[#4169E1]">Academic Background</h2>
+              <div className="space-y-2 animate-section">
+                <div className="bg-gray-50 dark:bg-gray-900 p-6 rounded-lg hover:scale-105 cursor-pointer transition-all duration-300 ">
+                  <h3 className="text-xl font-semibold text-[#5A8DFD]">Bachelor of Computer Science & Engineering</h3>
+                  <p className="text-gray-600 mt-2 dark:text-gray-300">IUC Douala | 2021 - 2025</p>
                   <ul className="mt-4 list-disc list-inside text-gray-600 dark:text-gray-300">
-                  <li>Minor in Mathematics</li>
-                    <li>President of Computer Science Society</li>
-                    <li>Dean's List all semesters</li>
+                    <li>Minor in Mathematics</li>
+                    <li>Dean's List - All Semesters</li>
                     <li>GPA: 3.65/4.0</li>
                   </ul>
                 </div>
-                <div className="bg-gray-50 dark:bg-gray-900 p-6 rounded-lg">
-                  <h3 className="text-xl font-semibold dark:text-white text-[#4169E1]">
-                   Ordinary and Advanced Level 
-                  </h3>
-                  <p className=" text-gray-600 dark:text-gray-300 mt-2">Du vaal | 2019 - 2021</p>
-                  <ul className="mt-4 list-disc list-inside text-gray-600 dark:text-gray-300">
-                    <li>11 papers - 30points</li>
-                    <li>5 papers - 25points </li>
-                    <li>Major in Mathematics Physics Futher Mathematics Computer Science Biology Chemistry ...</li>
-                  </ul>
-                </div>
               </div>
             </section>
 
-            {/* Professional Skills */}
-            <section className="mt-[100px]">
-              <h2 className="text-xl font-semibold text-white mt-40">
-                Professional Skills
-              </h2>
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-6 animate-section">
-                {skills.map((skill, index) => (
-                  <div
-                    key={index}
-                    className="dark:bg-gray-900 bg-gray-50 p-6 rounded-lg text-center"
-                  >
-                    <skill.icon className="w-12 h-12 mx-auto dark:text-white text-[#4169E1] mb-4" />
-                    <h3 className="text-lg font-semibold dark:text-white text-[#4169E1] mt-2">
-                      {skill.title}
-                    </h3>
-                    <p className="dark:text-gray-300 text-gray-600">{skill.description}</p>
+            {/* Professional Experience */}
+            <section>
+              <h2 className="mt-24 text-xl font-semibold text-[#4169E1]">Professional Experience</h2>
+              <div className="space-y-4 animate-section">
+                {experiences.map((exp, index) => (
+                  <div key={index} className="hover:scale-105 cursor-pointer transition-all duration-300  bg-gray-50 dark:bg-gray-900 p-6 rounded-lg">
+                    <h3 className="text-lg font-semibold text-[#5A8DFD]">{exp.title}</h3>
+                    <p className="text-gray-600 dark:text-gray-300 mt-2">{exp.duration}</p>
+                    <p className="dark:text-gray-300 mt-2">{exp.description}</p>
                   </div>
                 ))}
               </div>
             </section>
 
-            {/* Hobbies & Interests */}
-            <section className="mt-[100px]">
-              <h2 className="text-xl font-semibold text-white mb-4">
-                Hobbies & Interests
-              </h2>
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-6 animate-section">
-                {hobbies.map((hobby, index) => (
-                  <div
-                    key={index}
-                    className=" bg-gray-50 dark:bg-gray-900 p-6 rounded-lg text-center"
-                  >
-                    <hobby.icon className="w-12 h-12 mx-auto dark:text-white text-[#4169E1] mb-4" />
-                    <h3 className="mt-2 text-lg font-semibold dark:text-white text-[#4169E1]">
-                      {hobby.title}
-                    </h3>
-                    <p className="dark:text-gray-300 text-gray-600">{hobby.description}</p>
-                  </div>
-                ))}
-              </div>
-            </section>
           </div>
         </div>
       </div>

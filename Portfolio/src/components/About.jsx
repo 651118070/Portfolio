@@ -3,25 +3,58 @@ import gsap from 'gsap';
 import ScrollTrigger from 'gsap/ScrollTrigger';
 import { useEffect } from 'react';
 const skills = {
-  "Programming Languages": ["JavaScript", "TypeScript", "Python",],
+  "Programming Languages": ["JavaScript", "TypeScript", "Python","PHP"],
   "Frontend": ["Html","React", "Next.js", "Shadcn", "Tailwind CSS",],
-  "Backend": ["Node.js", "Express", "NestJS", ],
+  "Backend": ["Node.js", "Express", "NestJS","Laravel" ],
   "Database": ["MongoDB", "PostgreSQL"],
+  "Tools": ["Git", "GitHub", "VS Code", "Figma", "Postman", "Vercel","AWS","Docker"],
+  "Design": ["Figma", "Canva"]
   
 };
+const services = [
+  {
+    icon: "🌐",
+    title: "Web Development",
+    description: "Building dynamic, secure, and scalable web solutions tailored to meet business objectives and enhance user engagement."
+  },
+  {
+    icon: "📱",
+    title: "App Development",
+    description: "Delivering cross-platform mobile applications with seamless performance, intuitive interfaces, and robust functionality."
+  },
+  {
+    icon: "🎨",
+    title: "UI/UX Design",
+    description: "Crafting intuitive and visually compelling user interfaces focused on delivering exceptional user experiences through research-driven design."
+  },
+  {
+    icon: "🖌️",
+    title: "Graphic Design",
+    description: "Creating impactful visual designs that align with your brand identity and effectively communicate your message across digital and print media."
+  }
+];
+
 
 const values = [
   {
-    title: "Continuous Learning",
-    description: "Always eager to learn and adapt to new technologies and methodologies."
+    title: "honesty",
+    description: "I believe in transparency and accountability, ensuring truthfulness in every action and communication."
   },
   {
-    title: "Code Quality",
-    description: "Committed to writing clean, maintainable, and well-documented code."
+    title: "respect",
+    description: "I value diverse perspectives, treating others with fairness, empathy, and consideration."
   },
   {
-    title: "Collaboration",
-    description: "Strong believer in teamwork and knowledge sharing within the developer community."
+    title: "leadership",
+    description: "I lead by example, inspiring and motivating others through proactive problem-solving and visionary thinking."
+  },
+  {
+    title: "teamwork",
+    description: "I foster collaboration by working effectively with others toward shared goals, embracing collective success."
+  },
+  {
+    title: "timeBound",
+    description: "I prioritize tasks, manage time efficiently, and meet deadlines consistently to ensure optimal productivity and project success."
   }
 ];
 
@@ -51,6 +84,25 @@ const About = () => {
     const tl=gsap.timeline()
     tl.to(
       '.hobby',
+      
+      
+     {
+      scrollTrigger:{
+        trigger:'.hobby',
+        start:'top 30%',
+        scrub:true,
+       
+
+      },
+      x:100,
+      duration:1,
+      stagger:0.3,
+      ease:'power2.inOut'
+     },
+     
+    )
+    tl.to(
+      '.service',
       
       
      {
@@ -116,15 +168,14 @@ const About = () => {
             <div>
               <h3 className="text-xl font-semibold mb-4 dark:text-white text-[#4169E1]">Background</h3>
               <p className="text-gray-600 dark:text-gray-300 mb-6">
-                With over  <span className='text-[#4169E1] font-bold'>5 years of experience</span>  in web development, I've worked on various projects
+                With over  <span className='text-[#4169E1] font-bold'>3 years of experience</span>  in App Design & development, I've worked on various projects
                 ranging from small business websites to large-scale enterprise applications. I'm
                 passionate about creating efficient, scalable solutions and staying up-to-date with
                 the latest technologies.
               </p>
+              <h3 className="text-xl font-semibold mb-4 dark:text-white text-[#4169E1]">Entrepreneur and Leader</h3>
               <p className="text-gray-600 dark:text-gray-300">
-                When I'm not coding, you can find me contributing to open-source projects,
-                writing technical articles, or exploring new technologies. I believe in
-                continuous learning and sharing knowledge with the developer community.
+                Driven with the vision to ameliorate the education sector with the aid of AI based products in Cameroon and extend to Africa.
               </p>
             </div>
             <div>
@@ -153,7 +204,7 @@ const About = () => {
           <div className="grid md:grid-cols-2 gap-12">
             <div>
           <div>
-              <h3 className=" text-xl font-semibold mb-6 dark:text-white text-[#4169E1]">Core Values</h3>
+              <h3 className=" text-xl font-semibold mb-6 dark:text-white text-[#4169E1]">Soft Skills</h3>
           </div>
               <div className="space-y-4">
                 {values.map((value, index) => (
@@ -168,22 +219,44 @@ const About = () => {
             </div>
 
             <div>
-              <h3 className="text-xl font-semibold mb-6 dark:text-white text-[#4169E1]">Hobbies & Interests</h3>
+              <h3 className="text-xl hobby  font-semibold mb-6 dark:text-white text-[#4169E1]">Hobbies & Interests</h3>
               <div className="grid grid-cols-2 gap-4">
                 {hobbies.map((hobby, index) => (
                   <div
                     key={index}
-                    className="hobby p-4 rounded-lg bg-gray-50 dark:bg-gray-800 flex items-center gap-3"
+                    className="hover:scale-105 cursor-pointer transition-all duration-300  p-4 rounded-lg bg-gray-50 dark:bg-gray-800 flex items-center gap-3"
                   >
                     <span className="text-2xl">{hobby.emoji}</span>
                     <span className="text-gray-600 dark:text-gray-300">{hobby.name}</span>
                   </div>
                 ))}
               </div>
-            </div>
-          </div>
+              <div className="mt-10 service">
+  <h3 className="text-xl font-semibold mb-6 dark:text-white text-[#4169E1]">Services</h3>
+  <div className="grid  gap-4">
+    {services.map((service, index) => (
+      <div
+        key={index}
+        className="hover:scale-105 cursor-pointer transition-all duration-300 p-4 rounded-lg bg-gray-50 dark:bg-gray-800 flex items-start gap-4"
+      >
+        <span className="text-2xl">{service.icon}</span>
+        <div>
+          <h4 className="font-semibold text-gray-700 dark:text-white">{service.title}</h4>
+          <p className="text-gray-600 dark:text-gray-300 text-sm">{service.description}</p>
         </div>
       </div>
+    ))}
+  </div>
+  </div>
+            </div>
+            
+            
+          </div>
+          
+        </div>
+        
+      </div>
+  
     </section>
   );
 }

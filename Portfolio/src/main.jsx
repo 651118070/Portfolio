@@ -5,13 +5,13 @@ import "./index.css";
 import { ThemeProvider } from "./context/ThemeProvider.jsx";
 import { BrowserRouter } from "react-router-dom";
 import posthog from 'posthog-js'
-
+import { Toaster } from "@/components/ui/toaster"
 // Initialize PostHog with Vite environment variables
-const posthogKey = import.meta.env.VITE_PUBLIC_POSTHOG_KEY;
+const posthogKey = import.meta.env.VITE_POSTHOG_KEY;
 
 if (posthogKey) {
   posthog.init(posthogKey, {
-    api_host: import.meta.env.VITE_PUBLIC_POSTHOG_HOST || 'https://app.posthog.com',
+    api_host: import.meta.env.VITE_POSTHOG_HOST || 'https://app.posthog.com',
   });
   console.log('PostHog API Key:', posthogKey);
 } else {
@@ -24,6 +24,7 @@ ReactDOM.createRoot(document.getElementById("root")).render(
   <ThemeProvider>
   <BrowserRouter>
   <App />
+  <Toaster />
   </BrowserRouter>
   </ThemeProvider>
     
