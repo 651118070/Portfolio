@@ -102,7 +102,7 @@ export default function App() {
                 "-=1"
               )
               .to(".loading-container", { display: "none" });
-        }, 1000);
+        }, 500);
       },
     });
 

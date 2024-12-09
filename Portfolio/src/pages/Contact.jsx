@@ -1,4 +1,4 @@
-import React, { useRef, useState } from 'react';
+import React, { useState } from 'react';
 import gsap from 'gsap';
 import { Mail, Send } from 'lucide-react';
 import Navbar from '@/components/Navbar';
@@ -10,8 +10,11 @@ import { useToast } from "@/hooks/use-toast"
 gsap.registerPlugin(ScrollTrigger);
 
 export const Contact = () => {
-  const form = useRef();
-  const { toast } = useToast()
+  const {toast }= useToast();
+  const serviceId = import.meta.env.VITE_PUBLIC_SERVICE_ID;
+  const templateId = import.meta.env.VITE_PUBLIC_TEMPLATE_ID;
+  const userId = import.meta.env.VITE_PUBLIC_PUBLIC_KEY;
+  
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -19,38 +22,33 @@ export const Contact = () => {
   });
 
   const handleChange = (e) => {
-    setFormData({
-      ...formData,
-      [e.target.name]: e.target.value,
-    });
+    const { name, value } = e.target;
+    setFormData((prevData) => ({
+      ...prevData,
+      [name]: value,
+    }));
   };
 
   const sendEmail = (e) => {
     e.preventDefault();
 
+    // Sending form data to emailjs
     emailjs
-      .sendForm(
-        import.meta.env.VITE_SERVICE_ID,
-        import.meta.env.VITE_TEMPLATE_ID,
-        form.current,
-        import.meta.env.VITE_PUBLIC_KEY
-      )
+      .send(serviceId, templateId, formData, userId)
       .then(
         () => {
           toast({
             title: "Successfully sent",
-           
-          })
+          });
           console.log('SUCCESS!');
           setFormData({ name: '', email: '', message: '' });
         },
         (error) => {
           toast({
-            title: "Error sending message",
-           
-           
-          })
-          console.error('FAILED...', error.text);
+            title: "Error",
+            description: error.text || "An unknown error occurred",
+          });
+          console.error('FAILED...', error);
         }
       );
   };
@@ -106,7 +104,7 @@ export const Contact = () => {
             </div>
 
             {/* Contact Form */}
-            <form ref={form} onSubmit={sendEmail} className="space-y-6">
+            <form onSubmit={sendEmail} className="space-y-6">
               <div>
                 <label
                   htmlFor="name"

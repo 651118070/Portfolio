@@ -1,4 +1,4 @@
-import React from 'react';
+import React,{useEffect} from 'react';
 import gsap from 'gsap';
 import ScrollTrigger from 'gsap/ScrollTrigger';
 
@@ -80,85 +80,30 @@ gsap.registerPlugin(ScrollTrigger)
 
 export const About = () => {
 
-  // useEffect(()=>{
-  //   const tl=gsap.timeline()
-  //   tl.to(
-  //     '.hobby',
+  useEffect(()=>{
+    const tl=gsap.timeline()
+  
+    tl.fromTo(
+      '.aboutme',
+      {y:100},
       
+     {
+      scrollTrigger:{
+        trigger:'.saboutme',
+        start:'top 45%',
+        scrub:true,
       
-  //    {
-  //     scrollTrigger:{
-  //       trigger:'.hobby',
-  //       start:'top 30%',
-  //       scrub:true,
-       
-
-  //     },
-  //     x:100,
-  //     duration:1,
-  //     stagger:0.3,
-  //     ease:'power2.inOut'
-  //    },
+      },
+      y:0,
+      duration:1,
+      stagger:0.7,
+      ease:'power3.in'
+     },
      
-  //   )
-  //   tl.to(
-  //     '.service',
-      
-      
-  //    {
-  //     scrollTrigger:{
-  //       trigger:'.hobby',
-  //       start:'top 30%',
-  //       scrub:true,
-       
-
-  //     },
-  //     x:100,
-  //     duration:1,
-  //     stagger:0.3,
-  //     ease:'power2.inOut'
-  //    },
-     
-  //   )
-  //   tl.to(
-  //     '.aboutme',
-      
-  //    {
-  //     scrollTrigger:{
-  //       trigger:'.aboutme',
-  //       start:'top center',
-  //       scrub:true,
-       
-  //       toggleActions: "reset none none none"
-  //     },
-  //     x:50,
-  //     backgroundColor:"#4169E1",
-  //     duration:1,
-  //     stagger:0.5,
-  //     ease:'power3.in'
-  //    },
-     
-  //   )
-  //   tl.to(
-  //     '.color',
-      
-  //    {
-  //     scrollTrigger:{
-  //       trigger:'.color',
-  //       start:'top center',
-  //       scrub:true,
-    
-  //       toggleActions: "play pause reverse reset"
-  //     },
-
-  //     color:"white",
-  //     duration:1,
-  //     stagger:0.5,
-  //     ease:'power3.in'
-  //    },
-     
-  //   )
-  // },[])
+    )
+   
+   
+  },[])
   return (
     <section  className="py-20">
       <div className="max-w-4xl mx-auto">
@@ -237,7 +182,7 @@ export const About = () => {
     {services.map((service, index) => (
       <div
         key={index}
-        className="hover:scale-105 cursor-pointer transition-all duration-300 p-4 rounded-lg bg-gray-50 dark:bg-gray-800 flex items-start gap-4"
+        className="service hover:scale-105 cursor-pointer transition-all duration-300 p-4 rounded-lg bg-gray-50 dark:bg-gray-800 flex items-start gap-4"
       >
         <span className="text-2xl">{service.icon}</span>
         <div>
