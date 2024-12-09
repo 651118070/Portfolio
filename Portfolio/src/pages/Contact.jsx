@@ -20,6 +20,12 @@ export const Contact = () => {
     email: '',
     message: '',
   });
+ const template={
+  from_name:formData.name,
+  from_email:formData.email,
+  to_name:"Pola",
+  message:formData.message
+ }
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -34,7 +40,7 @@ export const Contact = () => {
 
     // Sending form data to emailjs
     emailjs
-      .send(serviceId, templateId, formData, userId)
+      .send(serviceId, templateId, template, userId)
       .then(
         () => {
           toast({
