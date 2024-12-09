@@ -1,7 +1,7 @@
 import React from 'react';
 import gsap from 'gsap';
 import ScrollTrigger from 'gsap/ScrollTrigger';
-import { useEffect } from 'react';
+
 const skills = {
   "Programming Languages": ["JavaScript", "TypeScript", "Python","PHP"],
   "Frontend": ["Html","React", "Next.js", "Shadcn", "Tailwind CSS",],
@@ -78,7 +78,7 @@ const hobbies = [
 ];
 gsap.registerPlugin(ScrollTrigger)
 
-const About = () => {
+export const About = () => {
 
   // useEffect(()=>{
   //   const tl=gsap.timeline()
@@ -260,5 +260,3 @@ const About = () => {
     </section>
   );
 }
-
-export default About;
