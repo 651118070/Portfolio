@@ -3,6 +3,10 @@ import { ExternalLink, Github } from 'lucide-react';
 import gsap from 'gsap';
 import ScrollTrigger from 'gsap/ScrollTrigger';
 import { motion } from "framer-motion";
+import ecom from '../assets/ecom.png'
+import sum from '../assets/sum.png'
+import mentor from '../assets/mentor.png'
+import ecom1 from '../assets/ecom2.png'
 gsap.registerPlugin(ScrollTrigger)
 export const fadeUp = (delay) => {
   return {
@@ -26,7 +30,7 @@ const projects = [
   {
     title: "E-Commerce Platform",
     description: "A full-stack e-commerce platform built with React, Node.js, and MongoDB.",
-    image: "https://plus.unsplash.com/premium_photo-1683746792239-6ce8cdd3ac78?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8ZSUyMGNvbW1lcmNlfGVufDB8fDB8fHww",
+    image: ecom,
     tech: ["React", "Node.js", "MongoDB", "Express","Redux toolkit"],
     liveLink: "https://mboashopsite.onrender.com/",
     githubLink: "https://github.com/651118070/shop1",
@@ -35,7 +39,7 @@ const projects = [
   {
     title: "AI-Powered Summariser Article",
     description: "Summarise articles with openAI",
-    image: "https://images.unsplash.com/photo-1620680779930-e74c15c8f7a0?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8c3VtbWFyaXNlJTIwYWklMjBhcnRpY2xlfGVufDB8fDB8fHww",
+    image: sum,
     tech: ["React", "OpenAI"],
     liveLink: "https://summariseepola.netlify.app/",
     githubLink: "https://github.com/651118070/summarize",
@@ -44,7 +48,7 @@ const projects = [
   {
     title: "E-learning Platform",
     description: "A platform to help gce students ace in their exams.",
-    image: "https://media.istockphoto.com/id/1919863292/photo/e-learning-education-internet-lessons-and-online-learning-with-webinars-video-tutorials.webp?a=1&b=1&s=612x612&w=0&k=20&c=t8D-3uQw-Dkvq5DluqPW1P7vbXyy2mN7XpKE_zcDWiw=",
+    image: mentor,
     tech: ["Nest js", "Next js", "Uploadthing", "Docker","MongoDB"],
     liveLink: "https://mentor-guru.vercel.app/",
     githubLink: "https://github.com/jpteks/Mentor-Guru",

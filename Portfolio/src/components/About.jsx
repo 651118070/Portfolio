@@ -13,14 +13,14 @@ const skills = {
 };
 const services = [
   {
-    icon: "🌐",
-    title: "Web Development",
-    description: "Building dynamic, secure, and scalable web solutions tailored to meet business objectives and enhance user engagement."
+    icon: "💻",
+    title: "Front End  Development",
+    description: "I craft visually stunning and highly responsive interfaces that deliver seamless user experiences across all devices. Let’s bring your brand to life with interactive and intuitive designs that captivate and convert."
   },
   {
-    icon: "📱",
-    title: "App Development",
-    description: "Delivering cross-platform mobile applications with seamless performance, intuitive interfaces, and robust functionality."
+    icon: "🧮",
+    title: "Back End Development",
+    description: "I build robust, scalable, and secure backend systems that power modern web applications. From databases to APIs, I ensure your digital infrastructure performs flawlessly to support your business goals."
   },
   {
     icon: "🎨",
@@ -120,7 +120,7 @@ export const About = () => {
               </p>
               <h3 className="text-xl font-semibold mb-4 dark:text-white text-[#4169E1]">Entrepreneur and Leader</h3>
               <p className="text-gray-600 dark:text-gray-300">
-                Driven with the vision to ameliorate the education sector with the aid of AI based products in Cameroon and extend to Africa.
+                Driven with the vision to provide software products that improve company productivity,and build a coding school in Cameroon and extend over Africa .
               </p>
             </div>
             <div>

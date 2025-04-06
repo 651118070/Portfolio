@@ -19,12 +19,6 @@ const NavbarMenu = [
   },
   {
     id: 2,
-    title: "About Me",
-    link: "/about",
-    classname:"about"
-  },
-  {
-    id: 3,
     title: "Projects",
     link: "/projects",
     classname:"projects"

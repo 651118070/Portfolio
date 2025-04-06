@@ -5,7 +5,7 @@ import { useNavigate } from 'react-router-dom';
 import Logos from './Logos';
 import { useTheme } from "../context/ThemeProvider";
 const Footer = () => {
-  const currentYear = new Date().getFullYear();
+  // const currentYear = new Date().getFullYear();
   const { theme, } = useTheme();
   const navigate=useNavigate();
   return (
@@ -24,11 +24,7 @@ const Footer = () => {
           <div>
             <h3 className="text-lg font-semibold mb-4 dark:text-white">Quick Links</h3>
             <ul className="space-y-2 cursor-pointer">
-              <li>
-                <a  onClick={() => navigate("/about")} className="text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400">
-                  About
-                </a>
-              </li>
+            
               <li>
                 <a onClick={() => navigate("/projects")} className="text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400">
                   Projects
@@ -77,7 +73,7 @@ const Footer = () => {
         </div>
         <div className="pt-8 border-t border-gray-200 dark:border-gray-700">
           <p className="text-center text-gray-600 dark:text-gray-300 flex justify-center items-center">
-            © {currentYear}  <Logos  mode={theme==="dark"? "dark":"light"}/>  All rights reserved.
+            © 2024 {"  "}   <Logos  mode={theme==="dark"? "dark":"light"}/>  {"  "} All rights reserved.
           </p>
         </div>
       </div>

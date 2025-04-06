@@ -14,10 +14,7 @@ function CustomRoutes() {
       path: "/",
       element: <Home />,
     },
-    {
-      path: "/about",
-      element: <About />,
-    },
+  
     {
       path: "/projects",
       element: <Projects />,

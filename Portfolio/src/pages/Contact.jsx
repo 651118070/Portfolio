@@ -104,7 +104,7 @@ export const Contact = () => {
 
                 <p className="flex items-center gap-2">
                   <span className="font-medium">Location:</span>
-                  <span>Bonapriso, Douala</span>
+                  <span>Makepe, Douala</span>
                 </p>
               </div>
             </div>
