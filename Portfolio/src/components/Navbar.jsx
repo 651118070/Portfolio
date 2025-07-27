@@ -23,6 +23,12 @@ const NavbarMenu = [
     link: "/projects",
     classname:"projects"
   },
+  {
+    id: 2,
+    title: "Blog",
+    link: "/blog",
+    classname:"blog"
+  },
   
 
  

@@ -7,6 +7,7 @@ import Home from "./pages/Home";
 
 import Projects from "./pages/Projects";
 import { Contact } from "./pages/Contact";
+import Blog from "./pages/Blog";
 
 function CustomRoutes() {
   const routes = useRoutes([
@@ -18,6 +19,10 @@ function CustomRoutes() {
     {
       path: "/projects",
       element: <Projects />,
+    },
+    {
+      path: "/blog",
+      element: <Blog />,
     },
     {
       path: "/contact",
