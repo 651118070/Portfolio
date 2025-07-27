@@ -15,7 +15,7 @@ const Footer = () => {
           <div>
             <h3 className="text-lg font-semibold mb-4 flex items-center gap-2">
               <Code className="w-5 h-5 text-blue-600 dark:text-blue-400" />
-             <Logos mode={theme==="dark"? "dark":"light"}/>
+              <p className="tracking-widest text-white">POLA <span className="font-bold">WAFFO</span></p>
             </h3>
             <p className="text-gray-600 dark:text-gray-300">
               Building digital experiences with modern web technologies.
@@ -73,7 +73,7 @@ const Footer = () => {
         </div>
         <div className="pt-8 border-t border-gray-200 dark:border-gray-700">
           <p className="text-center text-gray-600 dark:text-gray-300 flex justify-center items-center">
-            © 2024 {"  "}   <Logos  mode={theme==="dark"? "dark":"light"}/>  {"  "} All rights reserved.
+            © 2024 {"  "}<p className="tracking-widest">POLA <span className="font-bold">WAFFO</span></p> {"  "} All rights reserved.
           </p>
         </div>
       </div>

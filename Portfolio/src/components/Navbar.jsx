@@ -65,9 +65,10 @@ useEffect(()=>{
         className=" mx-4 flex justify-between items-center "
       >
         {/* logo section */}
-        <div>
+        <p className="tracking-widest">POLA <span className="font-bold">WAFFO</span></p>
+        {/* <div>
           <Logos mode={theme==="dark"? "dark":"light"}/>
-        </div>
+        </div> */}
         {/* Menu section on large screen */}
         <div className="hidden md:block">
           <ul className="flex items-center gap-4 relative  z-40 ">

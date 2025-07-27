@@ -72,14 +72,14 @@ const ProjectCard= ({
             </ol>
           </div>
 
-          <div>
+          {/* <div>
             <h4 className="text-lg font-semibold text-gray-900 dark:text-white mb-2">Challenges Faced</h4>
             <ul className="list-disc list-inside space-y-2 text-gray-600 dark:text-gray-300">
               {challenges.map((challenge, index) => (
                 <li key={index}>{challenge}</li>
               ))}
             </ul>
-          </div>
+          </div> */}
 
           <div>
             <h4 className="text-lg font-semibold text-gray-900 mb-2 dark:text-white">Solutions Implemented</h4>

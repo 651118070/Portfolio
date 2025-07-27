@@ -13,25 +13,32 @@ const skills = {
 };
 const services = [
   {
-    icon: "💻",
-    title: "Front End  Development",
-    description: "I craft visually stunning and highly responsive interfaces that deliver seamless user experiences across all devices. Let’s bring your brand to life with interactive and intuitive designs that captivate and convert."
+    icon: "🌐",
+    title: "Web Development",
+    description: "I create fast, responsive, and accessible websites that align with your brand and business objectives. From static sites to full-stack applications, I deliver modern web solutions that perform."
   },
   {
-    icon: "🧮",
-    title: "Back End Development",
-    description: "I build robust, scalable, and secure backend systems that power modern web applications. From databases to APIs, I ensure your digital infrastructure performs flawlessly to support your business goals."
+    icon: "📱",
+    title: "Mobile Development",
+    description: "I develop sleek and scalable mobile applications for both iOS and Android. With a focus on performance and usability, your app will deliver value and engagement wherever your users are."
   },
   {
-    icon: "🎨",
-    title: "UI/UX Design",
-    description: "Crafting intuitive and visually compelling user interfaces focused on delivering exceptional user experiences through research-driven design."
+    icon: "🗄️",
+    title: "Database Design",
+    description: "I design efficient, secure, and scalable database systems to support your application's data needs. From relational to NoSQL solutions, your data will be structured for performance and reliability."
   },
   {
-    icon: "🖌️",
-    title: "Graphic Design",
-    description: "Creating impactful visual designs that align with your brand identity and effectively communicate your message across digital and print media."
+    icon: "🧠",
+    title: "Software Analysis",
+    description: "I analyze and refine software systems to improve architecture, identify inefficiencies, and align solutions with business goals. Clear insights for smarter, faster, and more sustainable development."
+  },
+  {
+    icon: "🧭",
+    title: "Project Management",
+    description: "I lead and coordinate development efforts to deliver projects on time and within scope. From planning to execution, I ensure effective collaboration, risk management, and strategic alignment with your business vision."
   }
+  
+  
 ];
 
 
@@ -89,7 +96,7 @@ export const About = () => {
       
      {
       scrollTrigger:{
-        trigger:'.saboutme',
+        trigger:'.aboutme',
         start:'top 45%',
         scrub:true,
       
@@ -113,14 +120,12 @@ export const About = () => {
             <div>
               <h3 className="text-xl font-semibold mb-4 dark:text-white text-[#4169E1]">Background</h3>
               <p className="text-gray-600 dark:text-gray-300 mb-6">
-                With over  <span className='text-[#4169E1] font-bold'>3 years of experience</span>  in App Design & development, I've worked on various projects
-                ranging from small business websites to large-scale enterprise applications. I'm
-                passionate about creating efficient, scalable solutions and staying up-to-date with
-                the latest technologies.
+              With over <span className='text-[#4169E1] font-bold'>5 years of experience</span> in App Design & Development, I've worked on various projects ranging from small business websites to large-scale enterprise applications. I'm passionate about creating efficient, scalable solutions and staying up-to-date with the latest technologies. Over the years, I've also contributed to the growth and success of 5 different IT companies by delivering impactful digital solutions.
+
               </p>
               <h3 className="text-xl font-semibold mb-4 dark:text-white text-[#4169E1]">Entrepreneur and Leader</h3>
               <p className="text-gray-600 dark:text-gray-300">
-                Driven with the vision to provide software products that improve company productivity,and build a coding school in Cameroon and extend over Africa .
+                Driven with the vision to provide software products that improve company productivity,and build a IT training school and an incubator in Cameroon and extend over Africa .
               </p>
             </div>
             <div>

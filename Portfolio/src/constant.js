@@ -3,7 +3,35 @@ import sum from "../src/assets/sum.png";
 import mentor from "../src/assets/mentor.png";
 import fanta from "../src/assets/ecom2.png";
 import tjp from "../src/assets/tjp.png";
+import finzo from "../src/assets/finzo.png";
 export const projectsData = [
+  {
+    title: "Finzo - Personal Finance Manager",
+    description:
+      "A finance management web application designed to help users in Cameroon track their income, set budgets, and visualize spending habits for better financial decisions.",
+    image: finzo, // Remplace 'finzo' par l'import de ton image ex: import finzo from '../assets/finzo.png';
+    technologies: [
+      { name: "Next js", color: "bg-blue-100 text-blue-800" },
+      { name: "Tailwind CSS", color: "bg-green-100 text-green-800" },
+      { name: "Clerk", color: "bg-gray-100 text-gray-800" },
+      { name: "Shadcn", color: "bg-yellow-100 text-yellow-800" },
+    ],
+    liveUrl: "https://finzo.onrender.com/",
+    githubUrl: "https://github.com/651118070/finzo",
+    steps: [
+      "Designed a clean and intuitive interface for easy budget setup.",
+      "Built RESTful APIs for transaction tracking and category classification.",
+      "Integrated real-time data visualization for income and expense flow.",
+      "Implemented functionality to generate downloadable PDF reports between selected dates.",
+      "Added secure user authentication and feedback submission features.",
+    ],
+    solutions: [
+      "Built a user-friendly dashboard focused on clarity and step-by-step budgeting.",
+      "Used category tagging and real-time aggregation logic for clarity.",
+      "Used server-side PDF generation libraries to handle export tasks effectively.",
+    ],
+  },
+  
   {
     title: "E-Commerce Platform",
     description:
@@ -26,11 +54,7 @@ export const projectsData = [
       "Deployed the platform on Render for public access.",
       "Integrated Paypal as payment method",
     ],
-    challenges: [
-      "Handling complex state management for a dynamic shopping cart.",
-      "Ensuring secure payment handling and user data protection.",
-      "Optimizing API performance for product search and filtering.",
-    ],
+ 
     solutions: [
       "Used Redux Toolkit for efficient and organized state management.",
       "Implemented secure authentication and encrypted sensitive data.",
@@ -53,10 +77,7 @@ export const projectsData = [
       "Implemented error handling for API limits and invalid inputs.",
       "Deployed the app on Netlify for seamless access.",
     ],
-    challenges: [
-      "Ensuring accurate summaries for various article formats.",
-      "Handling API rate limits efficiently.",
-    ],
+  
     solutions: [
       "Implemented robust error handling for API errors.",
       "Used batching techniques to optimize API requests.",
@@ -83,10 +104,7 @@ export const projectsData = [
       "Utilized Docker for containerized deployment.",
       "Deployed the platform on Vercel for global accessibility.",
     ],
-    challenges: [
-      "Ensuring smooth upload and retrieval of large files.",
-      "Scalability to handle concurrent users during exam periods.",
-    ],
+ 
     solutions: [
       "Optimized file upload and download mechanisms with UploadThing.",
       "Implemented load balancing and horizontal scaling.",
@@ -109,17 +127,14 @@ export const projectsData = [
       "Designed a vibrant UI to align with the brand identity.",
       "Optimized site performance for smooth animations and transitions.",
     ],
-    challenges: [
-      "Maintaining brand consistency across devices.",
-      "Handling dynamic data updates for promotions and offers.",
-    ],
+ 
     solutions: ["Developed reusable components and dynamic themes."],
   },
   {
-    title: "Pro health ",
+    title: "Pro Health",
     description:
-      "A health platform that helps patients book for an appointment with the doctor of their choice. ",
-    image: tjp,
+      "A health platform that helps patients book for an appointment with the doctor of their choice.",
+    image: tjp, // Assurez-vous que 'tjp' est bien importé depuis vos assets
     technologies: [
       { name: "Next Js", color: "bg-blue-100 text-blue-800" },
       { name: "TailWind css", color: "bg-purple-100 text-purple-800" },
@@ -137,7 +152,12 @@ export const projectsData = [
       "Managed state and routing to ensure smooth user navigation and flow.",
       "Ensured performance optimization and accessibility across all devices.",
     ],
-    challenges: ["N/A"],
-    solutions: ["N/A"],
-  },
+  
+    solutions: [
+      "Integrated real-time schedule validation with Supabase and Prisma.",
+      "Used Clerk for robust authentication and role separation.",
+      "Designed mobile-first UI components to ensure accessibility and seamless use.",
+    ],
+  }
+  
 ];

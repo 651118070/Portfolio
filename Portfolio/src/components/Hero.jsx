@@ -1,6 +1,6 @@
 import React, {useEffect} from 'react';
 import { Github, Linkedin, Mail, Download,Book } from 'lucide-react';
-import me from "../assets/pic.jpeg";
+import me from "../assets/me.jpeg";
 import gsap from 'gsap';
 import {motion} from 'framer-motion';
 import ScrollTrigger from 'gsap/ScrollTrigger';
@@ -131,7 +131,7 @@ const Hero = () => {
   <img
     src={me}
     alt="Profile"
-    className="absolute mt-10  w-full h-full rounded-full shadow-lg object-cover hover:opacity-100 opacity-90 dark:opacity-50 dark:hover:opacity-100 mb-8  transition-transform duration-300"
+    className="absolute mt-10  w-full h-full rounded-full shadow-lg object-cover  mb-8  transition-transform duration-300"
   />
 </div>
 
@@ -140,24 +140,24 @@ const Hero = () => {
       <TypeAnimation
                 className="text-[#181818] dark:text-white"
                 sequence={[
-                  "3 years Experience",
+                  "Ceo Techsprint",
+                  1000,
+                  "Founder JPTEKS",
+                  1000,
+                  "Leadership",
+                  1000,
+                  "5 years Experience",
                   1000,
                   "Web Developer",
                   1000,
-                  "UI/UX Designer",
-                  1000,
-                  "Freelancer",
-                  1000,
-                  "100% productive",
+                  "Mobile Developer",
                   1000,
                   "Team work",
                   1000,
                   "Collaborative Persona",
                   1000,
-                  "Leadership",
-                  1000,
-                  "Graphic Designer",
-                  1000,
+                  
+                
                 ]}
                 wrapper="span"
                 speed={50}

@@ -2,6 +2,8 @@ import React from 'react'
 import logo from '../assets/formons.jpeg'
 import logo1 from '../assets/nor.png'
 import logo2 from '../assets/yae.png'
+import logo3 from '../assets/asso.png'
+import logo4 from '../assets/anchor.png'
 export default function Clients() {
   return (
     <div className='flex flex-col justify-center items-center py-20 '>
@@ -12,6 +14,8 @@ export default function Clients() {
 
 <img className="rounded-full w-20" src={logo1} alt="logo of le normalien" />
 <img className="w-40 rounded-full" src={logo2} alt="logo de yarabyte" />
+<img className="w-40 rounded-full" src={logo3} alt="logo de asso" />
+<img className="w-40 rounded-full" src={logo4} alt="logo de anchor" />
 
       </div>
     </div>
